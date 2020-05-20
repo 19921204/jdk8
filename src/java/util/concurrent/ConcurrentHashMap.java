@@ -687,15 +687,23 @@ public class ConcurrentHashMap<K,V> extends AbstractMap<K,V>
 
     /**
      * Returns a power of two table size for the given desired capacity.
+     * 对于给定的所需容量，返回两个表大小的幂
+     * 保证函数返回值是大于等于给定参数initialCapacity最小的2的幂次方的数值
+     * 为什么要必须是2的幂次方？HashMap中存储数据table的index是由key的Hash值决定的。
+     * 在HashMap存储数据的时候，我们期望数据能够均匀分布，以避免哈希冲突。自然而然我们就会想到去用%取余的操作来实现我们这一构想
+     * 取余(%)操作中如果除数是2的幂次方则等同于与其除数减一的与(&)操作，采用二进制位操作&，相对于%，能够提高运算效率，
+     * 这就是要求cap的值被要求为2幂次方的原因
      * See Hackers Delight, sec 3.2
      */
     private static final int tableSizeFor(int c) {
         int n = c - 1;
+        // n |= n >>> 1 n无符号右移1位，即n二进制最高位的1右移一位
         n |= n >>> 1;
         n |= n >>> 2;
         n |= n >>> 4;
         n |= n >>> 8;
         n |= n >>> 16;
+        // 位运算完以后，n的二进制位全为1
         return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
     }
 
