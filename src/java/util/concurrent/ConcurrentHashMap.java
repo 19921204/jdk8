@@ -2227,6 +2227,7 @@ public class ConcurrentHashMap<K,V> extends AbstractMap<K,V>
 
     /**
      * Initializes table, using the size recorded in sizeCtl.
+     * table初始化，初始化完以后sizeCtl变为原来的3/4？
      */
     private final Node<K,V>[] initTable() {
         Node<K,V>[] tab; int sc;
