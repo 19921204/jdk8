@@ -130,6 +130,8 @@ public class AtomicInteger extends Number implements java.io.Serializable {
      * the actual value was not equal to the expected value.
      */
     public final boolean compareAndSet(int expect, int update) {
+        // 四个参数，this表示当前对象，valueOffset表示value属性的内存偏移量，expect表示期望值，update表示更新值，当且仅当实际值=期望值时，
+        // 更新实际值为update，否则返回false
         return unsafe.compareAndSwapInt(this, valueOffset, expect, update);
     }
 

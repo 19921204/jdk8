@@ -1,10 +1,11 @@
+import java.util.concurrent.ConcurrentHashMap;
+
 public class Main {
     private static final int MAXIMUM_CAPACITY = 1 << 30;
 
     public static void main(String[] args) {
-        int initialCapacity = 200;
-
-        System.out.println(tableSizeFor(initialCapacity + (initialCapacity >>> 1) + 1));
+        ConcurrentHashMap<String, Object> map = new ConcurrentHashMap<>(17);
+        map.put("s","2");
     }
     private static final int tableSizeFor(int c) {
         int n = c - 1;
