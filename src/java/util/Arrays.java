@@ -3797,6 +3797,7 @@ public class Arrays {
     @SafeVarargs
     @SuppressWarnings("varargs")
     public static <T> List<T> asList(T... a) {
+        // 此处返回的ArrayList只是Arrays的一个内部类，只有个别的几个方法
         return new ArrayList<>(a);
     }
 
