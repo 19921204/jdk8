@@ -60,6 +60,9 @@ package java.util;
  * @since   JDK1.0
  */
 public class Observable {
+    /**
+     * 标记可观察者的状态改变情况，当发生改变时通知观察者
+     */
     private boolean changed = false;
     private Vector<Observer> obs;
 
