@@ -48,6 +48,8 @@ public interface Closeable extends AutoCloseable {
      * the {@code IOException}.
      *
      * @throws IOException if an I/O error occurs
+     *
+     * 接口方法默认的权限修饰符是public abstract，jdk8的接口新增default类型的接口方法可以有具体实现
      */
     public void close() throws IOException;
 }

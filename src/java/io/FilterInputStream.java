@@ -42,10 +42,10 @@ package java.io;
  * @author  Jonathan Payne
  * @since   JDK1.0
  */
-public
-class FilterInputStream extends InputStream {
+public class FilterInputStream extends InputStream {
     /**
      * The input stream to be filtered.
+     * volatile 修饰的变量 装饰者模式的核心在于装饰自己要持有被装饰者对象
      */
     protected volatile InputStream in;
 
