@@ -1346,6 +1346,7 @@ public class Arrays {
         if (length < INSERTIONSORT_THRESHOLD) {
             for (int i=low; i<high; i++)
                 for (int j=i; j>low &&
+                        // 模版方法 调用子类的compareTo方法比较
                          ((Comparable) dest[j-1]).compareTo(dest[j])>0; j--)
                     swap(dest, j, j-1);
             return;

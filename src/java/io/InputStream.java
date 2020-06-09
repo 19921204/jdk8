@@ -166,7 +166,7 @@ public abstract class InputStream implements Closeable {
         } else if (len == 0) {
             return 0;
         }
-
+        // 此处为模版方法
         int c = read();
         if (c == -1) {
             return -1;
