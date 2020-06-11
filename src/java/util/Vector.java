@@ -1159,6 +1159,7 @@ public class Vector<E>
         }
 
         public E next() {
+            // Vector的迭代器中大量使用了synchronized关键字，Vector是ArrayList的早期版本，线程安全的
             synchronized (Vector.this) {
                 checkForComodification();
                 int i = cursor;

@@ -2,7 +2,6 @@ public class Main {
     static final int MAXIMUM_CAPACITY = 1 << 30;
 
     public static void main(String[] args) {
-//        int i = Runtime.getRuntime().availableProcessors();
         System.out.println(tableSizeFor(2));
     }
 

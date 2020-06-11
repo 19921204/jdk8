@@ -757,6 +757,8 @@ public class Hashtable<K,V>
      * support the <tt>add</tt> or <tt>addAll</tt> operations.
      *
      * @since 1.2
+     *
+     * 返回的是一个Collection集合顶层接口
      */
     public Collection<V> values() {
         if (values==null)
