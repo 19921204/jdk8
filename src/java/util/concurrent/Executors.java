@@ -84,6 +84,7 @@ public class Executors {
      * @param nThreads the number of threads in the pool
      * @return the newly created thread pool
      * @throws IllegalArgumentException if {@code nThreads <= 0}
+     * 产生固定长度的线程池，可能堆积的请求处理队列可能消耗大量内存产生OOM
      */
     public static ExecutorService newFixedThreadPool(int nThreads) {
         return new ThreadPoolExecutor(nThreads, nThreads,
