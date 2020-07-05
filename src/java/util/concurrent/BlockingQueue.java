@@ -255,7 +255,7 @@ public interface BlockingQueue<E> extends Queue<E> {
     /**
      * Retrieves and removes the head of this queue, waiting if necessary
      * until an element becomes available.
-     *
+     * 阻塞获取队列头元素
      * @return the head of this queue
      * @throws InterruptedException if interrupted while waiting
      */
@@ -264,7 +264,7 @@ public interface BlockingQueue<E> extends Queue<E> {
     /**
      * Retrieves and removes the head of this queue, waiting up to the
      * specified wait time if necessary for an element to become available.
-     *
+     * 等待指定的时间内获取的队列头元素
      * @param timeout how long to wait before giving up, in units of
      *        {@code unit}
      * @param unit a {@code TimeUnit} determining how to interpret the

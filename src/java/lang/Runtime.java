@@ -266,6 +266,7 @@ public class Runtime {
      * @see #addShutdownHook
      * @see #removeShutdownHook
      * @since 1.3
+     * kill -15 等待应用正常关闭，可能会被忽略， kill -9 强制关闭jvm，会执行此方法
      */
     public void halt(int status) {
         SecurityManager sm = System.getSecurityManager();

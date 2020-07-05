@@ -150,6 +150,7 @@ public interface Queue<E> extends Collection<E> {
      *
      * @param e the element to add
      * @return {@code true} (as specified by {@link Collection#add})
+     * 返回true或者抛出异常
      * @throws IllegalStateException if the element cannot be added at this
      *         time due to capacity restrictions
      * @throws ClassCastException if the class of the specified element
@@ -171,6 +172,7 @@ public interface Queue<E> extends Collection<E> {
      * @param e the element to add
      * @return {@code true} if the element was added to this queue, else
      *         {@code false}
+     *         返回true或false
      * @throws ClassCastException if the class of the specified element
      *         prevents it from being added to this queue
      * @throws NullPointerException if the specified element is null and
