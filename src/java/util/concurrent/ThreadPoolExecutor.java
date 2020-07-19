@@ -1333,6 +1333,8 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
      * executor has been shutdown or because its capacity has been reached,
      * the task is handled by the current {@code RejectedExecutionHandler}.
      *
+     * threadPoolExecutor的execute方法
+     *
      * @param command the task to execute
      * @throws RejectedExecutionException at discretion of
      *         {@code RejectedExecutionHandler}, if the task
@@ -1363,6 +1365,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
          * and so reject the task.
          */
         int c = ctl.get();
+        // 线程池中的线程数量小于核心线程数直接开新线程跑任务
         if (workerCountOf(c) < corePoolSize) {
             if (addWorker(command, true))
                 return;

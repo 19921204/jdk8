@@ -263,6 +263,8 @@ public class Object {
      * <p>
      * Only one thread at a time can own an object's monitor.
      *
+     * notify和notifyAll的区别是notify是唤醒一个等待this object's monitor的线程，notifyAll是唤醒所有线程
+     *
      * @throws  IllegalMonitorStateException  if the current thread is not
      *               the owner of this object's monitor.
      * @see        java.lang.Object#notifyAll()
