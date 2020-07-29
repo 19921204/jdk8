@@ -827,6 +827,10 @@ public final class Integer extends Number implements Comparable<Integer> {
      * @since  1.5
      */
     public static Integer valueOf(int i) {
+        /**
+         * Integer i = 0; 自动装箱是java语言的语法糖，目的是增加代码的可读性，降低代码出错的机会
+         * 前端编译器编译后会调用Integer的valueOf方法
+         */
         if (i >= IntegerCache.low && i <= IntegerCache.high)
             return IntegerCache.cache[i + (-IntegerCache.low)];
         return new Integer(i);

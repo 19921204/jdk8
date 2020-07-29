@@ -121,6 +121,7 @@ public class ThreadLocal<T> {
      * subclassed, and this method overridden.  Typically, an
      * anonymous inner class will be used.
      *
+     * 重写这个方法初始化ThreadLocal变量的初始值
      * @return the initial value for this thread-local
      */
     protected T initialValue() {
