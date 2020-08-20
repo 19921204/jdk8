@@ -1036,9 +1036,12 @@ public class ConcurrentHashMap<K,V> extends AbstractMap<K,V>
         for (Node<K,V>[] tab = table;;) {
             Node<K,V> f; int n, i, fh;
             if (tab == null || (n = tab.length) == 0)
+                // table没有初始化，初始化table
                 tab = initTable();
             else if ((f = tabAt(tab, i = (n - 1) & hash)) == null) {
+                // table表的该节点node为空，直接CAS更新
                 if (casTabAt(tab, i, null,
+                             // 单向链表的next为空的是尾节点
                              new Node<K,V>(hash, key, value, null)))
                     break;                   // no lock when adding to empty bin
             }

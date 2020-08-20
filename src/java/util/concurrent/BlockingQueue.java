@@ -185,6 +185,7 @@ public interface BlockingQueue<E> extends Queue<E> {
      * {@code IllegalStateException} if no space is currently available.
      * When using a capacity-restricted queue, it is generally preferable to
      * use {@link #offer(Object) offer}.
+     * 没空间插入的话，抛IllegalStateException异常
      *
      * @param e the element to add
      * @return {@code true} (as specified by {@link Collection#add})
@@ -205,6 +206,7 @@ public interface BlockingQueue<E> extends Queue<E> {
      * available.  When using a capacity-restricted queue, this method is
      * generally preferable to {@link #add}, which can fail to insert an
      * element only by throwing an exception.
+     * 没空间插入的话返回的false
      *
      * @param e the element to add
      * @return {@code true} if the element was added to this queue, else
@@ -220,6 +222,7 @@ public interface BlockingQueue<E> extends Queue<E> {
     /**
      * Inserts the specified element into this queue, waiting if necessary
      * for space to become available.
+     * 没空间插入的话，等待
      *
      * @param e the element to add
      * @throws InterruptedException if interrupted while waiting
@@ -234,6 +237,7 @@ public interface BlockingQueue<E> extends Queue<E> {
     /**
      * Inserts the specified element into this queue, waiting up to the
      * specified wait time if necessary for space to become available.
+     * 定时等待插入，如果超时返回false
      *
      * @param e the element to add
      * @param timeout how long to wait before giving up, in units of

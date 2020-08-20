@@ -5447,6 +5447,7 @@ public class Collections {
         private transient Set<E> s;       // Its keySet
 
         SetFromMap(Map<E, Boolean> map) {
+            // 不可为空
             if (!map.isEmpty())
                 throw new IllegalArgumentException("Map is non-empty");
             m = map;
